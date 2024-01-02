@@ -73,7 +73,8 @@ Next to last step is the creation of the OCI Storage Bucket where the documents 
 
 <a name="Steps"/>  
 
-Here you have the links to each of the labs to fulfill this HoL: 
+
+  Here you have the links to each of the labs to fulfill this HoL: 
 
    [1. Create an Oracle Blockchain Network](../../blob/main/1-create-network/README.md)  
    [2. Preparation of Oracle App Builder development environment](../../blob/main/2-install-AppBuilder/README.md)  
