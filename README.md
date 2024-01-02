@@ -9,7 +9,7 @@ If you are interested in learn how easily you can implement a custom CMS enriche
 The whole solution is created using just three Oracle Cloud Services we depict in the following diagram:
 
 <p align="center">
-<img width="416" height="307" src="https://github.com/jvillenap/CMS-Secured-by-Blockchain-oracle-devrel/blob/main/images/0_WEDO_CMS_LogicalArchitecture.jpg"/>
+<img width="416" height="307" src="./images/0_WEDO_CMS_LogicalArchitecture.jpg"/>
 </p>
 
 As you can see in the picture, we are using two different persistence solutions, it is:
