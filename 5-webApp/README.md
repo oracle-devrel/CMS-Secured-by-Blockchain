@@ -94,14 +94,14 @@ Once provided all the details, push the ***Import*** button.
 
 ## 3. Configure the Web Application to point to your Blockchain instance and your Storage Bucket
 In this chapter we are going to configure the provided Web Application to point to the Blockchain Instance we created in the chapter [Create an Oracle Blockchain Network
-](https://github.com/jvillenap/CMS-Secured-by-Blockchain/blob/main/1-create-network/README.md), and to point the Object Storage Bucket we created in the chapter [Creation and Configuration of the OCI Storage Bucket](https://github.com/jvillenap/CMS-Secured-by-Blockchain/blob/main/4-bucket/README.md).
+](../1-create-network/README.md), and to point the Object Storage Bucket we created in the chapter [Creation and Configuration of the OCI Storage Bucket](../4-bucket/README.md).
 
 <details>
   <summary>3.1 Configure the Blockchain Network (click to show)</summary>
   
 ### 3.1 Configure the Blockchain Network.
 First of all we need to recap all the information related with the Blockchain Network we defined in the first chapter [Create an Oracle Blockchain Network
-](https://github.com/jvillenap/CMS-Secured-by-Blockchain/blob/main/1-create-network/README.md). If you followed the same terminology used in the HoL, following table shows this information:
+](../1-create-network/README.md). If you followed the same terminology used in the HoL, following table shows this information:
 
 |Field|Value|  
 |-|-|
@@ -150,7 +150,7 @@ Once changed all this parameters we can move forward to the next chapter!
 
 ### 3.2 Configure the OCI Storage Bucket.
 
-Now we are going to configure the bucket to be used by the Web Application based in the values of the API Key and Bucket we created in the chapter [Creation and Configuration of the OCI Storage Bucket](https://github.com/jvillenap/CMS-Secured-by-Blockchain/blob/main/4-bucket/README.md).
+Now we are going to configure the bucket to be used by the Web Application based in the values of the API Key and Bucket we created in the chapter [Creation and Configuration of the OCI Storage Bucket](../4-bucket/README.md).
 
 First select the ***Services Connection*** Section (1), and then select the ***fileUpload*** Service Connection (2).
 
@@ -188,7 +188,7 @@ As you can see from the image, the ***Key Id*** is composed based in the followi
 ```
    <Tenancy-OCID>/<User-OCID>/<Key-Fingerprint>
 ``` 
-All this values can be obtained from the ***Configuration File Preview*** obtained when ***API Key*** was created in chapter [Creation and Configuration of the OCI Storage Bucket](https://github.com/jvillenap/CMS-Secured-by-Blockchain/blob/main/4-bucket/README.md).
+All this values can be obtained from the ***Configuration File Preview*** obtained when ***API Key*** was created in chapter [Creation and Configuration of the OCI Storage Bucket](../4-bucket/README.md).
 
 ***Private Key*** is the private key we Used/Generated/Downloaded (depending on the selected option) during the ***API Key*** creation.
 
