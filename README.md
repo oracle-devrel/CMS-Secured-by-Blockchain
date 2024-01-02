@@ -158,15 +158,6 @@ MISSING
 ## URLs
 Useful training can be found at:  
 
-
-
-<details>
-  <summary>Oracle Blockchain tutorials</summary>
-
-   [Learn how to use Oracle Blockchain Platform most efficiently](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/tutorials-oci.html)  
-
-</details>
-
 <details>
   <summary>Oracle University</summary>
 
@@ -176,8 +167,12 @@ This course is designed for developers who are new to Oracle's Blockchain Techno
 
 </details>
 
+<details>
+  <summary>Oracle Blockchain tutorials</summary>
 
-     
+   [Learn how to use Oracle Blockchain Platform most efficiently](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/tutorials-oci.html)  
+
+</details>     
 
 ## Contributing
 This project is open source.  Please submit your contributions by forking this repository and submitting a pull request!  Oracle appreciates any contributions that are made by the open source community.
