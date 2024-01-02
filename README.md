@@ -61,7 +61,7 @@ To implement a solution like the one exposed in this HoL, there are three main a
 <img width="584" height="532" src="https://github.com/jvillenap/CMS-Secured-by-Blockchain-oracle-devrel/blob/main/images/8-bc-arquitecture.png"/>
 </p>
 
-First of all we will create an Hyperledger Fabric network, which initially will be composed of one single organization, but can be easily scaled to as many members as you need. If you want to see how to create a multi org network, you can follow the instructions in the first labs of the [Using NFT and FT Tokens in Oracle Blockchain](https://github.com/jvillenap/Using-NFT-and-FT-Tokens-in-Oracle-Blockchain/blob/main/README.md "Using NFT and FT Tokens in Oracle Blockchain").
+First of all we will create an Hyperledger Fabric network, which initially will be composed of one single organization, but can be easily scaled out to as many members as you need. If you want to see how to create a multi org Hyperledger Fabric network, you can follow the instructions in the first labs of the [Using NFT and FT Tokens in Oracle Blockchain HoL](https://github.com/jvillenap/Using-NFT-and-FT-Tokens-in-Oracle-Blockchain/blob/main/README.md "Using NFT and FT Tokens in Oracle Blockchain").
 
 Then, we will proceed to create the smartcontract to handle the logic needed to persist and manage into blockchain the entities required by our business use case. 
 
