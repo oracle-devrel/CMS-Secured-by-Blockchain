@@ -156,7 +156,7 @@ Documents will be stored and retrieved directly by our Web Application, which wi
 MISSING
 
 ## URLs
-Useful training can be found at:  
+Useful training can also be found at:  
 
 <details>
   <summary>Oracle University</summary>
