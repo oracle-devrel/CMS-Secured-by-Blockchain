@@ -71,10 +71,9 @@ At this point, the smartcontract methods have already been published through the
 
 Next to last step is the creation of the OCI Storage Bucket where the documents itself will be stored, and finally, last step is reconfiguration the provided VBCS application to point to our newly created Blockchain Network and the new bucket configured in our tenancy. Once all the re-configuration is done, application will be deployed into our tenancy.
 
-<a name="Steps"/>
+<a name="Steps"/>  
 
-Here you have the links to each of the labs to fulfill this HoL:
-
+Here you have the links to each of the labs to fulfill this HoL: 
 
    [1. Create an Oracle Blockchain Network](../../blob/main/1-create-network/README.md)  
    [2. Preparation of Oracle App Builder development environment](../../blob/main/2-install-AppBuilder/README.md)  
