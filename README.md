@@ -80,7 +80,7 @@ Next to last step is the creation of the OCI Storage Bucket where the documents 
    [2. Preparation of Oracle App Builder development environment](../../blob/main/2-install-AppBuilder/README.md)  
    [3. Creation, Installation, Deployment and Initialization of the SmartContract](../../blob/main/3-smartcontract/README.md)  
    [4. Creation and Configuration of the OCI Storage Bucket](../../blob/main/4-bucket/README.md)   
-   [5. Configuration, Deployment, and Test of the Web Application](../../blob/main/5-webbApp/README.md)  
+   [5. Configuration, Deployment, and Test of the Web Application](../../blob/main/5-webApp/README.md)  
 
 
 ### Prerequisites
