@@ -45,7 +45,7 @@ There will be two different roles to access to the documents through the applica
 
 * ***Document Reviewer***: Users accessing with this role can review documentation of a folder without being capable to do any change on them.
 
-If you are interested in know a little bit more about NFTs, check the [Using NFT and FT Tokens in Oracle Blockchain](https://github.com/jvillenap/Using-NFT-and-FT-Tokens-in-Oracle-Blockchain/blob/main/README.md "Using NFT and FT Tokens in Oracle Blockchain") HoL, in which you can deploy your first Smartcontract handling Fungible and Non-Fungible tokens on Hyperledger Fabric, and test them really easily.
+If you are interested in know a little bit more about NFTs, check the [Using NFT and FT Tokens in Oracle Blockchain](https://github.com/jvillenap/Using-NFT-and-FT-Tokens-in-Oracle-Blockchain/blob/main/README.md "Using NFT and FT Tokens in Oracle Blockchain") HoL, in it you can see how to deploy a solution where Fungible and Non-Fungible tokens are both needed.
 
 <a name="Products"/>
 
