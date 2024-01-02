@@ -163,16 +163,12 @@ Useful training can be found at:
 <details>
   <summary>Oracle Blockchain tutorials</summary>
 
-### Oracle Blockchain tutorials 
-
    [Learn how to use Oracle Blockchain Platform most efficiently](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/tutorials-oci.html)  
 
 </details>
 
 <details>
   <summary>Oracle University</summary>
-
-### Oracle University 
 
 This course is designed for developers who are new to Oracle's Blockchain Technology. The course will teach you about the fundamentals of Blockchain and the methods of writing simple blockchain applications that enable seamless transactions.
 
