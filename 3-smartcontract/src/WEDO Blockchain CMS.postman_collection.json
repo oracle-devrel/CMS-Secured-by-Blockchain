@@ -1,0 +1,686 @@
+{
+	"info": {
+		"_postman_id": "e4a1d240-48ce-4e1d-a8d6-0f26a052b12f",
+		"name": "WEDO Blockchain CMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AdminSteps",
+			"item": [
+				{
+					"name": "Step-0: Init Admin User Account",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{bc_nft_founder_userid1_pwd}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{bc_nft_founder_userid1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chaincode\": \"{{bc_nft_chaincode_name}}\",\n    \"args\": [\n        \"init\",\n        \"[{\\\"orgId\\\":\\\"org1\\\",\\\"userId\\\":\\\"cmsleg001\\\"},{\\\"orgId\\\":\\\"org1\\\",\\\"userId\\\":\\\"cmsfin001\\\"},{\\\"orgId\\\":\\\"org1\\\",\\\"userId\\\":\\\"cmsrsk001\\\"}]\"\n    ],\n    \"timeout\": {{bc_timeout}},\n    \"isInit\": true,\n    \"sync\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bc_founder_provider_url}}/api/v2/channels/{{bc_nft_channel_name}}/transactions",
+							"host": [
+								"{{bc_founder_provider_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"channels",
+								"{{bc_nft_channel_name}}",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-1: Create Account",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{bc_nft_founder_userid1_pwd}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{bc_nft_founder_userid1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chaincode\": \"{{bc_nft_chaincode_name}}\",\n    \"args\": [\"createAccount\", \"org1\",\"cmsrsk001\",\"nonfungible\"],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bc_founder_provider_url}}/api/v2/channels/{{bc_nft_channel_name}}/transactions",
+							"host": [
+								"{{bc_founder_provider_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"channels",
+								"{{bc_nft_channel_name}}",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-2: getAllAdminAccounts",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{bc_nft_founder_userid1_pwd}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{bc_nft_founder_userid1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chaincode\": \"wedocmstmp\",\n    \"args\": [\n        \"getAllTokenAdmins\"\n    ],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bc_founder_provider_url}}/api/v2/channels/wedocmstmp/transactions",
+							"host": [
+								"{{bc_founder_provider_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"channels",
+								"wedocmstmp",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-3: Add Minter Role",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{bc_nft_founder_userid1_pwd}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{bc_nft_founder_userid1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chaincode\": \"{{bc_nft_chaincode_name}}\",\n    \"args\": [\n        \"addRole\",\n        \"minter\",\"org1\",\"cmsleg001\"\n        ],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bc_founder_provider_url}}/api/v2/channels/{{bc_nft_channel_name}}/transactions",
+							"host": [
+								"{{bc_founder_provider_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"channels",
+								"{{bc_nft_channel_name}}",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Use case 1 - Create Expedient",
+			"item": [
+				{
+					"name": "Step-0: Create Expedient",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{bc_nft_founder_userid1_pwd}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{bc_nft_founder_userid1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chaincode\": \"{{bc_nft_chaincode_name}}\",\n    \"args\": [\n        \"createExpedientNFTToken\",\n        \"{\\\"tokenId\\\":\\\"OP-EXP-1\\\",\\\"tokenDesc\\\":\\\"Loan Expedient\\\",\\\"tokenUri\\\":\\\"LoanExp-URL0001\\\",\\\"metadata\\\":{\\\"expedientID\\\":\\\"OP-EXP-1\\\",\\\"expedientType\\\":\\\"Loan Expedient\\\"}, \\\"documents\\\":[]}\"\n    ],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bc_founder_provider_url}}/api/v2/channels/{{bc_nft_channel_name}}/transactions",
+							"host": [
+								"{{bc_founder_provider_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"channels",
+								"{{bc_nft_channel_name}}",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-1: Attach Doc to Expedient",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{bc_nft_founder_userid1_pwd}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{bc_nft_founder_userid1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chaincode\": \"{{bc_nft_chaincode_name}}\",\n    \"args\": [\n        \"attachDocument\",\n        \"OP-EXP-1\", \n        \"OP-EXP-1-invoice123\", \n        \"2 - Blockchain Architecture Brief.pdf (application/pdf)\", \n        \"b998b062df21601b4e8b1808de2ceec74a4ed5d51567885cc4599e1fc3b0ac09\", \n        \"Proforma Invoice\", \n        \"[\\\"Invoice Number\\\",\\\"date-expiration\\\",\\\"Provider\\\"]\",\n        \"[\\\"123\\\",\\\"2023-10-30\\\",\\\"AcmeInc1\\\"]\"\n    ],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bc_founder_provider_url}}/api/v2/channels/{{bc_nft_channel_name}}/transactions",
+							"host": [
+								"{{bc_founder_provider_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"channels",
+								"{{bc_nft_channel_name}}",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "...Get User Details By AccountID",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{bc_nft_founder_userid1_pwd}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{bc_nft_founder_userid1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chaincode\": \"{{bc_nft_chaincode_name}}\",\n    \"args\": [\n        \"getUserByAccountId\",\n        \"oaccount~8c907ed928293331e5bd35d15a7bfe8f60eb88430588d248e10131e6ff6ba2de\"\n    ],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bc_founder_provider_url}}/api/v2/channels/{{bc_nft_channel_name}}/chaincode-queries",
+							"host": [
+								"{{bc_founder_provider_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"channels",
+								"{{bc_nft_channel_name}}",
+								"chaincode-queries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "...Get Accounts by OrgId:UserId",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{bc_nft_founder_userid1_pwd}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{bc_nft_founder_userid1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chaincode\": \"{{bc_nft_chaincode_name}}\",\n    \"args\": [\n        \"getAccountsByRole\", \"minter\"\n    ],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bc_founder_provider_url}}/api/v2/channels/{{bc_nft_channel_name}}/chaincode-queries",
+							"host": [
+								"{{bc_founder_provider_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"channels",
+								"{{bc_nft_channel_name}}",
+								"chaincode-queries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "...Get All Expedients",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{bc_nft_founder_userid1_pwd}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{bc_nft_founder_userid1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chaincode\": \"{{bc_nft_chaincode_name}}\",\n    \"args\": [\n        \"getAllTokens\"\n    ],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bc_founder_provider_url}}/api/v2/channels/{{bc_nft_channel_name}}/chaincode-queries",
+							"host": [
+								"{{bc_founder_provider_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"channels",
+								"{{bc_nft_channel_name}}",
+								"chaincode-queries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "...Get All Expedients By User",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{bc_nft_founder_userid1_pwd}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{bc_nft_founder_userid1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chaincode\": \"{{bc_nft_chaincode_name}}\",\n    \"args\": [\n        \"getAllTokensByUser\",\n        \"org1\",\n        \"cmsleg001\"\n    ],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bc_founder_provider_url}}/api/v2/channels/{{bc_nft_channel_name}}/chaincode-queries",
+							"host": [
+								"{{bc_founder_provider_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"channels",
+								"{{bc_nft_channel_name}}",
+								"chaincode-queries"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Use case 2 - Transfer Custody of Expedient",
+			"item": [
+				{
+					"name": "Step-0: Transfer Operation",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{bc_nft_founder_userid3}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{bc_nft_founder_userid3_pwd}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chaincode\": \"{{bc_nft_chaincode_name}}\",\n    \"args\": [\n        \"safeTransferFrom\",\n        \"org1\",\n        \"cmsrsk001\",\n        \"org1\",\n        \"cmsfin001\",\n        \"OP-EXP-1\"\n    ],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bc_founder_provider_url}}/api/v2/channels/{{bc_nft_channel_name}}/transactions",
+							"host": [
+								"{{bc_founder_provider_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"channels",
+								"{{bc_nft_channel_name}}",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step-1: Get Expedient History",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{bc_nft_founder_userid1_pwd}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{bc_nft_founder_userid1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chaincode\": \"{{bc_nft_chaincode_name}}\",\n    \"args\": [\n        \"getTokenHistory\",\n        \"OP-EXP-1\"\n    ],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bc_founder_provider_url}}/api/v2/channels/{{bc_nft_channel_name}}/chaincode-queries",
+							"host": [
+								"{{bc_founder_provider_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"channels",
+								"{{bc_nft_channel_name}}",
+								"chaincode-queries"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Use case 3 - Retrieve Documents of an Expedient",
+			"item": [
+				{
+					"name": "RetrieveDocumentsOfExpedient",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{bc_nft_founder_userid1_pwd}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{bc_nft_founder_userid1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chaincode\": \"{{bc_nft_chaincode_name}}\",\n    \"args\": [\n        \"retrieveDocuments\",\n        \"OP-EXP-1\"\n    ],\n    \"timeout\": {{bc_timeout}},\n    \"sync\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bc_founder_provider_url}}/api/v2/channels/{{bc_nft_channel_name}}/transactions",
+							"host": [
+								"{{bc_founder_provider_url}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"channels",
+								"{{bc_nft_channel_name}}",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "bc_founder_provider_url",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "bc_timeout",
+			"value": "60000",
+			"type": "default"
+		},
+		{
+			"key": "bc_nft_founder_userid1",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "bc_nft_founder_userid1_pwd",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "bc_nft_founder_userid2",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "bc_nft_founder_userid2_pwd",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "bc_nft_founder_userid3",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "bc_nft_founder_userid3_pwd",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "bc_nft_channel_name",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "bc_nft_chaincode_name",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
