@@ -2,8 +2,6 @@
 
 [![License: UPL](https://img.shields.io/badge/license-UPL-green)](https://img.shields.io/badge/license-UPL-green) [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=oracle-devrel_CMS-Secured-by-Blockchain)](https://sonarcloud.io/dashboard?id=oracle-devrel_CMS-Secured-by-Blockchain)
 
-## THIS IS A NEW, BLANK REPO THAT IS NOT READY FOR USE YET.  PLEASE CHECK BACK SOON!
-
 ## Introduction
 
 If you are interested in learn how easily you can implement a custom CMS enriched with a verification of non-tampering of the documents by using blockchain as a certifier of the integrity of the documents, here you will see how it ca be easily done thanks to some of the PaaS solution offered by Oracle Cloud Infrastructure (OCI).
@@ -75,7 +73,8 @@ Next to last step is the creation of the OCI Storage Bucket where the documents 
 
 <a name="Steps"/>
 
-Here you have the links to each of the labs to fulfill this HoL:  
+Here you have the links to each of the labs to fulfill this HoL:
+
 
    [1. Create an Oracle Blockchain Network](../../blob/main/1-create-network/README.md)  
    [2. Preparation of Oracle App Builder development environment](../../blob/main/2-install-AppBuilder/README.md)  
