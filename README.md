@@ -27,7 +27,7 @@ And finally, we are also using the Identity Management solution offered by OCI, 
 
 it is important to highlight that, among the information stored in blockchain for each document, there is a hash generated based on the binary content of the document, here we can see how this hash is included among the metadata information of each document to be stored into the blockchain ledger:
 <p align="center">
-<img width="620" height="530" src="https://github.com/jvillenap/CMS-Secured-by-Blockchain-oracle-devrel/blob/main/images/1_PostmanDocHash2.png"/>
+<img width="620" height="530" src="./images/1_PostmanDocHash2.png"/>
 </p>
 
 if someone modifies the document from its external location, in our case a bucket in OCI Storage, next time someone tries to retrieve the document, the verfication based on validity of the hash will fail, so the user will be notified for the tampering of the document.
@@ -37,7 +37,7 @@ Regarding with the functional use case, the assets we are going to develop simul
 The folder is represented into blockchain as a non fungible token (NFT), because this kind of tokens fit really well in situations where one key aspect is the ownership of the asset. It means we can define the different kind of actions which can be executed against it, depending on the role of the user accessing to the folder, so the documents are child elements of the NFT entity who acts as an archive. 
 
 <p align="center">
-<img width="785" height="510" src="https://github.com/jvillenap/CMS-Secured-by-Blockchain-oracle-devrel/blob/main/images/2_documentWorkflow.png"/>
+<img width="785" height="510" src="./images/2_documentWorkflow.png"/>
 </p>
 
 There will be two different roles to access to the documents through the application:
@@ -58,7 +58,7 @@ To implement a solution like the one exposed in this HoL, there are three main a
    2. Development and Deployment of the Smartcontract.  
    3. Creation of the application(s) which will make use of our Smartcontract.  
   <p align="center">
-<img width="584" height="532" src="https://github.com/jvillenap/CMS-Secured-by-Blockchain-oracle-devrel/blob/main/images/8-bc-arquitecture.png"/>
+<img width="584" height="532" src="./images/8-bc-arquitecture.png"/>
 </p>
 
 First of all we will create an Hyperledger Fabric network, which initially will be composed of one single organization, but can be easily scaled out to as many members as you need. If you want to see how to create a multi org Hyperledger Fabric network, you can follow the instructions in the first labs of the [Using NFT and FT Tokens in Oracle Blockchain HoL](https://github.com/jvillenap/Using-NFT-and-FT-Tokens-in-Oracle-Blockchain/blob/main/README.md "Using NFT and FT Tokens in Oracle Blockchain").
@@ -93,20 +93,20 @@ Next to last step is the creation of the OCI Storage Bucket where the documents 
 Leveraging in Oracle Blockchain we can create in minutes an Hyperledger Fabric network as a founder, or join whatever existing Hyperledger Fabric network as a new participant. For the purpose of this HoL, we are going to create the most simple network where there is one single participant, obviously the founder of the network. This single organization network, does not have too much sense, but after the initial creation it can be easily extended by adding new organizations to the network. So, the topology of the network will be something like: 
 
 <p align="center">
-<img width="371" height="392" src="https://github.com/jvillenap/CMS-Secured-by-Blockchain-oracle-devrel/blob/main/images/3-bc_topology.png"/>
+<img width="371" height="392" src="./images/3-bc_topology.png"/>
 </p>
 
 
 In this Hyperledger Fabric network we will create a dedicated channel to be used only for the smartcontracts related with our use case. In my case I've named the channel ***wedocms***, and obviously the only existing participant of the network will join this channel:
 
 <p align="center">
-<img width="834" height="153" src="https://github.com/jvillenap/CMS-Secured-by-Blockchain-oracle-devrel/blob/main/images/4-bc-channel.png"/>
+<img width="834" height="153" src="./images/4-bc-channel.png"/>
 </p>
 
 All the administrative taks will be easily executed thanks to the Service Console present for any Oracle Blockchain instances, one for the founder, and the other for the participant:
 
 <p align="center">
-<img width="960" height="540" src="https://github.com/jvillenap/CMS-Secured-by-Blockchain-oracle-devrel/blob/main/images/5-bc-adminconsole.png"/>
+<img width="960" height="540" src="./images/5-bc-adminconsole.png"/>
 </p>
 
 </details>
@@ -118,13 +118,13 @@ All the administrative taks will be easily executed thanks to the Service Consol
 In the other hand, Oracle App Builder is a low-code development tool created by Oracle to help you in the development of your Smartcontracts, abstracting you from all the intrinsic technical complexities, also if you need to implement a NFT token. So, leveraging Oracle Blockchain and Oracle AppBuilder you will reduce considerably the time and effort required to create your Smartcontract, even more when you need to implement a Smartcontract based in NFTs and/or FTs.
 
 <p align="center">
-<img width="960" height="540" src="https://github.com/jvillenap/CMS-Secured-by-Blockchain-oracle-devrel/blob/main/images/6-appbuilder1.png"/>
+<img width="960" height="540" src="./images/6-appbuilder1.png"/>
 </p>
 
 AppBuilder will help you to reduce considerably the complexity of the development, packaging, testing, and deployment of Hyperledger Fabric chaincodes, giving you the option to create them in different languages (TypeScript or Go).
 
 <p align="center">
-<img width="814" height="392" src="https://github.com/jvillenap/CMS-Secured-by-Blockchain-oracle-devrel/blob/main/images/7-appbuilder2.png"/>
+<img width="814" height="392" src="./images/7-appbuilder2.png"/>
 </p>
 
 </details>
