@@ -156,10 +156,10 @@ Documents will be stored and retrieved directly by our Web Application, which wi
 MISSING
 
 ## URLs
-Useful training can be found at:
-   [Oracle Blockchain tutorials - Learn how to use Oracle Blockchain Platform most efficiently](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/tutorials-oci.html)  
-   [Oracle University - Blockchain Development for Oracle Blockchain Platform](https://mylearn.oracle.com/ou/course/blockchain-development-for-oracle-blockchain-platform/104989/)  
+Useful training can be found at:  
 
+   [Oracle Blockchain tutorials - Learn how to use Oracle Blockchain Platform most efficiently](https://docs.oracle.com/en/cloud/paas/blockchain-cloud/tutorials-oci.html)  
+   [Oracle University - Oracle Blockchain Platform: Low-Code, Autonomous, Enterprise-Grade](https://mylearn.oracle.com/ou/course/blockchain-development-for-oracle-blockchain-platform/104989/)  
 
 ## Contributing
 This project is open source.  Please submit your contributions by forking this repository and submitting a pull request!  Oracle appreciates any contributions that are made by the open source community.
