@@ -247,7 +247,7 @@ When you are dealing with FTs and/or NFTs Tokens, there is a bunch of administra
 ---
 
 IMPORTANT: Before the execution of any of the below steps we must create the enrollmentIDs into the REST Proxies for those users granted to access to the smartcontract methods. The enrollment is a mapping between the username who invoke the REST API, and the accounts managed internally by blockchain to which tokens will be assigned.
-The enrollment creation has already been done at the end of the first chapter, [Create Enrollments in the REST Proxy nodes](https://github.com/jvillenap/CMS-Secured-by-Blockchain/tree/main/1-create-network#createEnrollments).
+The enrollment creation has already been done at the end of the first chapter, [Create Enrollments in the REST Proxy nodes](../1-create-network#createEnrollments).
 
 ---
 
