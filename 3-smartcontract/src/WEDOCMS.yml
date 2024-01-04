@@ -1,0 +1,71 @@
+assets:
+    - name: folderNFT
+      type: token
+      symbol: eDocs
+      standard: erc721+
+      anatomy: 
+        type: nonfungible
+        unit: whole
+      behavior:
+        - indivisible
+        - singleton
+        - mintable:
+        - transferable
+        - burnable
+        - roles:
+            minter_role_name: minter
+      properties:
+          - name: folderHASH
+            type: string
+          - name: documents
+            type: document[]
+      metadata:
+          - name: folderID
+            type: string
+            mandatory: true
+            id: true
+          - name: folderType
+            type: string
+            mandatory: true
+      methods:
+        crud: [create, getById, update, delete]
+        others: [getHistoryById, getByRange]
+    - name: document
+      properties:
+        - name: docName
+          type: string
+          mandatory: true
+          id: true
+        - name: docURL
+          type: string
+          mandatory: true
+        - name: docHASH
+          type: string
+          mandatory: true
+        - name: docType
+          type: string
+          mandatory: true
+        - name: docProperties
+          type: docProperty[]
+      methods:
+        crud: [create, getById, update, delete]
+        others: [getHistoryById, getByRange]
+    - name: docProperty
+      type: embedded
+      properties:
+          - name: propName
+            type: string
+            mandatory: true
+          - name: propValue
+            type: string
+            mandatory: true
+      methods:
+        crud: [create, getById, update, delete]
+        others: [getHistoryById, getByRange]
+customMethods:
+    - executeQuery
+    - "attachDocument(tokenId: string, docName: string, docURL: string, docHASH: string, docType: string, docProps: string[], docVals: string[])" # Attach a document to an existing folder. 
+    - "retrieveDocuments(tokenId: string)" # Retrieve Documents of an folder. 
+    - "transferFolder(tokenId: string, fromOrgId: string, fromUserId: string, toOrgId: string, toUserId: string)" # Transfer the folder among participants. 
+    - "updateFolderHASH(tokenId: string, newHash: string)" # Update HASH folder 
+    - "getFolderHASH(tokenId: string)" # Check HASH folder 
